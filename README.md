@@ -15,8 +15,8 @@
 
 - [题目1: 实现一个深拷贝函数](questions/DeepClone/index.js)
 - [题目2: 实现一个 EventEmitter](questions/EventEmitter/index.js)
-- [题目3: Promise](questions/Promise)
-- [题目4: 防抖函数和节流函数](questions/防抖节流)
+- [题目3: Promise](questions/Promise/index.js)
+- [题目4: 防抖函数和节流函数](questions/防抖节流/index.js)
 - 更多题目请查看 [questions 目录](questions)
 
 
