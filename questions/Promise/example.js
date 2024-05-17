@@ -1,3 +1,5 @@
+const { MyPromise } = require('./index');
+
 // 示例用法
 const promise1 = MyPromise.resolve(3);
 const promise2 = 42;
