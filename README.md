@@ -21,6 +21,9 @@
 - 更多题目请查看 [questions 目录](questions)
 
 ### 算法部分
+- [二叉树](算法/二叉树/README.md)
+- [哈希表](算法/哈希表/README.md)
+- [回溯算法](算法/回溯算法/README.md)
 - [贪心算法](算法/贪心算法/README.md)
 
 ---
