@@ -20,7 +20,7 @@ const data = {
 };
 
 // 方法1: 将对象展平为xxx.xxx的形式进行匹配
-function replaceTemplate1(s, data) {
+function replaceTemplate(s, data) {
   data = flatObject(data);
 
   for (let key in data) {
@@ -32,4 +32,16 @@ function replaceTemplate1(s, data) {
   return s
 }
 
-console.log(replaceTemplate1(s, data));
+console.log(replaceTemplate(s, data));
+
+// 方法2：
+// 使用正则表达式 /\$\{([^}]+)\}/g 来匹配模板字符串中的占位符 ${xxxx}
+// 通过 reduce 方法递归地访问嵌套数据对象中的属性，直到获取最终值
+function replaceTemplateByREG(template, data) {
+  return template.replace(/\$\{([^}]+)\}/g, (_, key) => {
+    // 使用函数将点分隔的路径转化为数据对象中的值
+    return key.split(".").reduce((acc, part) => acc && acc[part], data);
+  });
+}
+
+console.log(replaceTemplateByREG(s, data));
