@@ -1,5 +1,5 @@
 // 实现一个promise.all
-const promiseAll = (promises) => {
+export const promiseAll = (promises) => {
   return new Promise((resolve, reject) => {
     let count = 0, result = [];
 
@@ -20,3 +20,11 @@ const promiseAll = (promises) => {
     }
   });
 };
+
+export function promiseRace(promises) {
+  return new Promise((resolve, reject) => {
+    for (const promise of promises) {
+      Promise.resolve(promise).then(resolve, reject);
+    }
+  });
+}
