@@ -25,3 +25,17 @@ const _apply = (content, args) => {
 
   return res
 }
+
+const _bind = (content, ...argsment) => {
+  content = content || window;
+
+  content['callback'] = this;
+
+  return function(args) {
+    const res = content["callback"].apply(content, [...args, ...argsment]);
+
+    delete content["callback"];
+
+    return res;
+  }
+}
